@@ -1,125 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    &lt;!&ndash; Required meta tags &ndash;&gt;-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <title>RC Car</title>
-</head>
-<body>
-    <h1>RC Car</h1>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-primary btn-sm mb-3" id="forward_btn" onclick="forward()">Forward</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-primary btn-sm mb-3" id="left_btn">Left</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary btn-sm mb-3" id="stop_btn">Stop</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary btn-sm mb-3" id="right_btn">Right</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-primary btn-sm mb-3" id="back_btn">Back</button>
-            </div>
-        </div>
-    </div>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-</html>
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">-->
+<!--    <title>RC Car</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>RC Car</h1>-->
+<!--    <div class="container text-center">-->
+<!--        <div class="row">-->
+<!--            <div class="col">-->
+<!--                <button class="btn btn-primary btn-sm mb-3" id="forward_btn" onclick="forward()">Forward</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col">-->
+<!--                <button class="btn btn-primary btn-sm mb-3" id="left_btn">Left</button>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <button class="btn btn-primary btn-sm mb-3" id="stop_btn">Stop</button>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <button class="btn btn-primary btn-sm mb-3" id="right_btn">Right</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col">-->
+<!--                <button class="btn btn-primary btn-sm mb-3" id="back_btn">Back</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <script src="{{ url_for('static', filename='js/main.js') }}"></script>-->
+<!--</body>-->
+<!--</html>-->
 
 
 <!-- Code from Arduino -->
-<!--static const char PROGMEM INDEX_HTML[] = R"rawliteral(-->
-<!--<html>-->
-<!--  <head>-->
-<!--    <title>ESP32-CAM Robot</title>-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-<!--  -->
-<!--    <style>-->
-<!--      body { font-family: Arial; text-align: center; margin:0px auto; padding-top: 30px;}-->
-<!--      table { margin-left: auto; margin-right: auto; }-->
-<!--      td { padding: 8 px; }-->
-<!--      .button {-->
-<!--        background-color: #2f4468;-->
-<!--        border: none;-->
-<!--        color: white;-->
-<!--        padding: 10px 20px;-->
-<!--        text-align: center;-->
-<!--        text-decoration: none;-->
-<!--        display: inline-block;-->
-<!--        font-size: 18px;-->
-<!--        margin: 6px 3px;-->
-<!--        cursor: pointer;-->
-<!--        -webkit-touch-callout: none;-->
-<!--        -webkit-user-select: none;-->
-<!--        -khtml-user-select: none;-->
-<!--        -moz-user-select: none;-->
-<!--        -ms-user-select: none;-->
-<!--        user-select: none;-->
-<!--        -webkit-tap-highlight-color: rgba(0,0,0,0);-->
-<!--      }-->
-<!--      img {  width: auto ;-->
-<!--        max-width: 100% ;-->
-<!--        height: auto ; -->
-<!--      }-->
-<!--    </style>-->
-<!--  -->
-<!--  </head>-->
+<html>
+  <head>
+    <title>RC Car</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--  <body>-->
-<!--    <h1>ESP32-CAM Robot</h1>-->
-<!--    <img src="" id="photo" >-->
-<!--    <table>-->
-<!--      <tr>-->
-<!--        <td colspan="3" align="center">-->
-<!--          <button class="button" onmousedown="toggleCheckbox('forward');" ontouchstart="toggleCheckbox('forward');" onmouseup="toggleCheckbox('stop');" ontouchend="toggleCheckbox('stop');">Forward</button>-->
-<!--        </td>-->
-<!--      </tr>-->
-<!--      -->
-<!--      <tr>-->
-<!--        <td align="center">-->
-<!--          <button class="button" onmousedown="toggleCheckbox('left');" ontouchstart="toggleCheckbox('left');" onmouseup="toggleCheckbox('stop');" ontouchend="toggleCheckbox('stop');">Left</button>-->
-<!--        </td>-->
+    <style>
+      body { font-family: Arial; text-align: center; margin:0px auto; padding-top: 30px;}
+      table { margin-left: auto; margin-right: auto; }
+      td { padding: 8 px; }
+      .button {
+        background-color: #2f4468;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 6px 3px;
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+      }
+      img {  width: auto ;
+        max-width: 100% ;
+        height: auto ;
+      }
+    </style>
 
-<!--        <td align="center">-->
-<!--          <button class="button" onmousedown="toggleCheckbox('stop');" ontouchstart="toggleCheckbox('stop');">Stop</button>-->
-<!--        </td>-->
-<!--        -->
-<!--        <td align="center">  -->
-<!--          <button class="button" onmousedown="toggleCheckbox('right');" ontouchstart="toggleCheckbox('right');" onmouseup="toggleCheckbox('stop');" ontouchend="toggleCheckbox('stop');">Right</button>-->
-<!--        </td>-->
-<!--      </tr>-->
+  </head>
 
-<!--      <tr>-->
-<!--        <td colspan="3" align="center">-->
-<!--          <button class="button" onmousedown="toggleCheckbox('backward');" ontouchstart="toggleCheckbox('backward');" onmouseup="toggleCheckbox('stop');" ontouchend="toggleCheckbox('stop');">Backward</button>-->
-<!--        </td>-->
-<!--      </tr>                   -->
-<!--    </table>-->
+  <body>
+    <h1>RC Car</h1>
+    <table>
+      <tr>
+        <td colspan="3" align="center">
+          <button class="button" onmousedown="forward();" ontouchstart="forward();" onmouseup="stop();" ontouchend="stop();">Forward</button>
+        </td>
+      </tr>
 
-<!--   <script>-->
-<!--   function toggleCheckbox(x) {-->
-<!--     var xhr = new XMLHttpRequest();-->
-<!--     xhr.open("GET", "/action?go=" + x, true);-->
-<!--     xhr.send();-->
-<!--   }-->
-<!--   window.onload = document.getElementById("photo").src = window.location.href.slice(0, -1) + ":81/stream";-->
-<!--  </script>-->
-<!--  </body>-->
-<!--</html>-->
-<!--)rawliteral";-->
+      <tr>
+        <td align="center">
+          <button class="button" onmousedown="left();" ontouchstart="left();" onmouseup="stop();" ontouchend="stop();">Left</button>
+        </td>
+
+        <td align="center">
+          <button class="button" onmousedown="stop();" ontouchstart="stop();">Stop</button>
+        </td>
+
+        <td align="center">
+          <button class="button" onmousedown="right();" ontouchstart="right();" onmouseup="stop();" ontouchend="stop();">Right</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" align="center">
+          <button class="button" onmousedown="backward();" ontouchstart="backward();" onmouseup="stop();" ontouchend="stop();">Backward</button>
+        </td>
+      </tr>
+    </table>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

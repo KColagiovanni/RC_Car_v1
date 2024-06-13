@@ -13,30 +13,35 @@ def index():
 def forward():
     mv = Movement()
     mv.forward()
+    return render_template('index.html')
 
 
-@app.route('/backwards')
-def backwards():
+@app.route('/backward')
+def backward():
     mv = Movement()
-    mv.backwards()
+    mv.backward()
+    return render_template('index.html')
 
 
 @app.route('/left')
 def left():
     mv = Movement()
     mv.left()
+    return render_template('index.html')
 
 
 @app.route('/right')
 def right():
     mv = Movement()
     mv.right()
+    return render_template('index.html')
 
 
 @app.route('/stop')
 def stop():
     mv = Movement()
     mv.stop()
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
