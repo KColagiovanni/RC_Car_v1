@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from movement import Movement
 
 app = Flask(__name__)
-
+# light_count = 0
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -45,8 +45,19 @@ def stop():
 
 
 @app.route('/flashingLights')
-def flashing_lights():
+def flashingLights():
     mv = Movement()
+    # if light_count % 2 == 0:
+    #     toggle = True
+    #     light_count += 1
+    # else:
+    #     toggle = False
+    # mv.toggle_lights(toggle)
+    # if light_count % 2 == 0:
+    #     toggle = True
+    #     light_count += 1
+    # else:
+    #     toggle = False
     mv.toggle_lights()
     return render_template('index.html')
 
@@ -54,6 +65,7 @@ def flashing_lights():
 if __name__ == '__main__':
     app.run(
         debug=True,
-        host='192.168.0.221',
+        # host='192.168.0.221',  # Use for RPi
+        host='0.0.0.0',  # Use for local debugging
         port=5000
     )
