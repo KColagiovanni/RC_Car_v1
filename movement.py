@@ -11,8 +11,8 @@ class Movement:
         self.MOTOR_2_PIN_2 = 6
         self.RED_LED_PIN = 20
         self.BLUE_LED_PIN = 21
-        self.YELLOW_LED_PIN = 20
-        self.GREEN_LED_PIN = 21
+        self.YELLOW_LED_PIN = 1
+        self.GREEN_LED_PIN = 7
 
         self.lights = False
         self.flash_duration = 0.5
