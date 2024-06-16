@@ -15,7 +15,7 @@ class Movement:
         self.GREEN_LED_PIN = 7
 
         self.lights = False
-        self.flash_duration = 0.5
+        self.flash_duration = 0.1
         self.flash_count = 0
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.MOTOR_1_PIN_1, GPIO.OUT)
