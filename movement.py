@@ -11,6 +11,8 @@ class Movement:
         self.MOTOR_2_PIN_2 = 6
         self.RED_LED_PIN = 20
         self.BLUE_LED_PIN = 21
+        self.YELLOW_LED_PIN = 20
+        self.GREEN_LED_PIN = 21
 
         self.lights = False
         self.flash_duration = 0.5
@@ -22,6 +24,8 @@ class Movement:
         GPIO.setup(self.MOTOR_2_PIN_2, GPIO.OUT)
         GPIO.setup(self.RED_LED_PIN, GPIO.OUT)
         GPIO.setup(self.BLUE_LED_PIN, GPIO.OUT)
+        GPIO.setup(self.YELLOW_LED_PIN, GPIO.OUT)
+        GPIO.setup(self.GREEN_LED_PIN, GPIO.OUT)
 
     def forward(self):
         print('Move Forward')
@@ -61,18 +65,33 @@ class Movement:
     def toggle_lights(self):
         flash_count = 0
         while flash_count < 25:
+
             print('Flash Red')
-            GPIO.output(self.RED_LED_PIN, True)
             GPIO.output(self.BLUE_LED_PIN, False)
+            GPIO.output(self.RED_LED_PIN, True)
             sleep(self.flash_duration)
-            print('Flash Blue')
-            GPIO.output(self.BLUE_LED_PIN, True)
+
+            print('Flash Yellow')
             GPIO.output(self.RED_LED_PIN, False)
+            GPIO.output(self.YELLOW_LED_PIN, True)
             sleep(self.flash_duration)
+
+            print('Flash Green')
+            GPIO.output(self.YELLOW_LED_PIN, False)
+            GPIO.output(self.GREEN_LED_PIN, True)
+            sleep(self.flash_duration)
+
+            print('Flash Blue')
+            GPIO.output(self.GREEN_LED_PIN, False)
+            GPIO.output(self.BLUE_LED_PIN, True)
+            sleep(self.flash_duration)
+
             flash_count += 1
         else:
             GPIO.output(self.BLUE_LED_PIN, False)
             GPIO.output(self.RED_LED_PIN, False)
+            GPIO.output(self.YELLOW_LED_PIN, False)
+            GPIO.output(self.GREEN_LED_PIN, False)
 
     # def lights_on(self):
     #     while True:
