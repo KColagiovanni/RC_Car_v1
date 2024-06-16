@@ -70,6 +70,9 @@ class Movement:
             GPIO.output(self.RED_LED_PIN, False)
             sleep(self.flash_duration)
             flash_count += 1
+        else:
+            GPIO.output(self.BLUE_LED_PIN, False)
+            GPIO.output(self.RED_LED_PIN, False)
 
     # def toggle_lights(self):
     #     # print(f'lights is {self.lights}')
