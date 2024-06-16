@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template
 from movement import Movement
 
 app = Flask(__name__)
@@ -57,4 +57,3 @@ if __name__ == '__main__':
         host='192.168.0.221',
         port=5000
     )
-

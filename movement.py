@@ -1,7 +1,8 @@
 from time import sleep
 import RPi.GPIO as GPIO
 
-class Movement():
+
+class Movement:
 
     def __init__(self):
         self.MOTOR_1_PIN_1 = 26
@@ -56,14 +57,14 @@ class Movement():
         GPIO.output(self.MOTOR_2_PIN_2, False)
 
     def toggle_lights(self):
-        if self.lights == True:
+        if self.lights:
             print('Turning lights On')
-            self.flashingLights(True)
+            self.flashing_lights(True)
         else:
             print('Turning lights Off')
-            self.flashingLights(False)
+            self.flashing_lights(False)
 
-    def flashingLights(self, lights_on):
+    def flashing_lights(self, lights_on):
         print('Flashing Lights')
         while lights_on:
             GPIO.output(self.RED_LED_PIN, True)
