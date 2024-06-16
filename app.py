@@ -44,9 +44,17 @@ def stop():
     return render_template('index.html')
 
 
+@app.route('/flashingLights')
+def flashing_lights():
+    mv = Movement()
+    mv.toggle_lights()
+    return render_template('index.html')
+
+
 if __name__ == '__main__':
     app.run(
         debug=True,
         host='192.168.0.221',
         port=5000
     )
+

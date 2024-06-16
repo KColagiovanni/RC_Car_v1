@@ -108,6 +108,13 @@
           <button class="button" onmousedown="backward();" ontouchstart="backward();" onmouseup="stop();" ontouchend="stop();">Backward</button>
         </td>
       </tr>
+
+      <tr>
+        <td colspan="3" align="center">
+          <button class="button" onclick="toggleLights();">Flashing Lights</button>
+        </td>
+      </tr>
+
     </table>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>

@@ -27,3 +27,9 @@ function stop(){
         .then(response => response.json)
         .then(data => console.log(data))
 }
+
+function toggleLights(){
+    fetch('/flashingLights')
+        .then(response => response.json)
+        .then(data => console.log(data))
+}
