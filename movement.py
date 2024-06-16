@@ -9,8 +9,8 @@ class Movement:
         self.MOTOR_1_PIN_2 = 19
         self.MOTOR_2_PIN_1 = 13
         self.MOTOR_2_PIN_2 = 6
-        self.RED_LED_PIN = 16
-        self.BLUE_LED_PIN = 20
+        self.RED_LED_PIN = 20
+        self.BLUE_LED_PIN = 21
 
         self.lights = False
         self.flash_duration = 0.5
@@ -73,6 +73,22 @@ class Movement:
         else:
             GPIO.output(self.BLUE_LED_PIN, False)
             GPIO.output(self.RED_LED_PIN, False)
+
+    # def lights_on(self):
+    #     while True:
+    #         print('Flash Red')
+    #         GPIO.output(self.RED_LED_PIN, True)
+    #         GPIO.output(self.BLUE_LED_PIN, False)
+    #         sleep(self.flash_duration)
+    #         print('Flash Blue')
+    #         GPIO.output(self.BLUE_LED_PIN, True)
+    #         GPIO.output(self.RED_LED_PIN, False)
+    #         sleep(self.flash_duration)
+    #
+    # def lights_off(self):
+    #     print('Lights off')
+    #     GPIO.output(self.BLUE_LED_PIN, False)
+    #     GPIO.output(self.RED_LED_PIN, False)
 
     # def toggle_lights(self):
     #     # print(f'lights is {self.lights}')
