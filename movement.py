@@ -14,9 +14,6 @@ class Movement:
         self.YELLOW_LED_PIN = 1
         self.GREEN_LED_PIN = 7
 
-        self.lights = False
-        self.flash_duration = 0.1
-        self.flash_count = 0
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.MOTOR_1_PIN_1, GPIO.OUT)
         GPIO.setup(self.MOTOR_1_PIN_2, GPIO.OUT)
@@ -62,48 +59,80 @@ class Movement:
         GPIO.output(self.MOTOR_2_PIN_1, False)
         GPIO.output(self.MOTOR_2_PIN_2, False)
 
-    def toggle_lights(self):
+    def sequential_flashing(self, flash_duration):
         flash_count = 0
         while flash_count < 25:
 
             print('Flash Red')
             GPIO.output(self.BLUE_LED_PIN, False)
             GPIO.output(self.RED_LED_PIN, True)
-            sleep(self.flash_duration)
+            sleep(flash_duration)
 
             print('Flash Yellow')
             GPIO.output(self.RED_LED_PIN, False)
             GPIO.output(self.YELLOW_LED_PIN, True)
-            sleep(self.flash_duration)
+            sleep(flash_duration)
 
             print('Flash Green')
             GPIO.output(self.YELLOW_LED_PIN, False)
             GPIO.output(self.GREEN_LED_PIN, True)
-            sleep(self.flash_duration)
+            sleep(flash_duration)
 
             print('Flash Blue')
             GPIO.output(self.GREEN_LED_PIN, False)
             GPIO.output(self.BLUE_LED_PIN, True)
-            sleep(self.flash_duration)
+            sleep(flash_duration)
 
             flash_count += 1
         else:
+            print('Flash Off')
             GPIO.output(self.BLUE_LED_PIN, False)
             GPIO.output(self.RED_LED_PIN, False)
             GPIO.output(self.YELLOW_LED_PIN, False)
             GPIO.output(self.GREEN_LED_PIN, False)
 
-    # def lights_on(self):
-    #     while True:
-    #         print('Flash Red')
-    #         GPIO.output(self.RED_LED_PIN, True)
-    #         GPIO.output(self.BLUE_LED_PIN, False)
-    #         sleep(self.flash_duration)
-    #         print('Flash Blue')
-    #         GPIO.output(self.BLUE_LED_PIN, True)
-    #         GPIO.output(self.RED_LED_PIN, False)
-    #         sleep(self.flash_duration)
-    #
+    def police_lights(self, flash_duration):
+        flash_count = 0
+        while flash_count < 25:
+            print('Flash Red')
+            GPIO.output(self.RED_LED_PIN, True)
+            GPIO.output(self.BLUE_LED_PIN, False)
+            sleep(flash_duration)
+            print('Flash Blue')
+            GPIO.output(self.BLUE_LED_PIN, True)
+            GPIO.output(self.RED_LED_PIN, False)
+            sleep(flash_duration)
+        else:
+            print('Flash Off')
+            GPIO.output(self.BLUE_LED_PIN, False)
+            GPIO.output(self.RED_LED_PIN, False)
+
+    def paired_flashing(self, flash_duration):
+        flash_count = 0
+        while flash_count < 25:
+
+            print('Flash Red and Green')
+            GPIO.output(self.BLUE_LED_PIN, False)
+            GPIO.output(self.YELLOW_LED_PIN, False)
+            GPIO.output(self.RED_LED_PIN, True)
+            GPIO.output(self.GREEN_LED_PIN, True)
+            sleep(flash_duration)
+
+            print('Flash Yellow and Blue')
+            GPIO.output(self.RED_LED_PIN, False)
+            GPIO.output(self.GREEN_LED_PIN, False)
+            GPIO.output(self.YELLOW_LED_PIN, True)
+            GPIO.output(self.BLUE_LED_PIN, True)
+            sleep(flash_duration)
+
+            flash_count += 1
+        else:
+            print('Flash Off')
+            GPIO.output(self.BLUE_LED_PIN, False)
+            GPIO.output(self.RED_LED_PIN, False)
+            GPIO.output(self.YELLOW_LED_PIN, False)
+            GPIO.output(self.GREEN_LED_PIN, False)
+
     # def lights_off(self):
     #     print('Lights off')
     #     GPIO.output(self.BLUE_LED_PIN, False)

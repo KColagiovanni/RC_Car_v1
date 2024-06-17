@@ -48,7 +48,7 @@
   <head>
     <title>RC Car</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
       body { font-family: Arial; text-align: center; margin:0px auto; padding-top: 30px;}
       table { margin-left: auto; margin-right: auto; }
@@ -85,39 +85,76 @@
     <table>
       <tr>
         <td colspan="3" align="center">
-          <button class="button" onmousedown="forward();" ontouchstart="forward();" onmouseup="stop();" ontouchend="stop();">Forward</button>
+          <button class="button btn btn-primary btn-sm mb-3" onmousedown="forward();" ontouchstart="forward();" onmouseup="stop();" ontouchend="stop();">Forward</button>
         </td>
       </tr>
 
       <tr>
         <td align="center">
-          <button class="button" onmousedown="left();" ontouchstart="left();" onmouseup="stop();" ontouchend="stop();">Left</button>
+          <button class="button btn btn-primary btn-sm mb-3" onmousedown="left();" ontouchstart="left();" onmouseup="stop();" ontouchend="stop();">Left</button>
         </td>
 
         <td align="center">
-          <button class="button" onmousedown="stop();" ontouchstart="stop();">Stop</button>
+          <button class="button btn btn-primary btn-sm mb-3" onmousedown="stop();" ontouchstart="stop();">Stop</button>
         </td>
 
         <td align="center">
-          <button class="button" onmousedown="right();" ontouchstart="right();" onmouseup="stop();" ontouchend="stop();">Right</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td colspan="3" align="center">
-          <button class="button" onmousedown="backward();" ontouchstart="backward();" onmouseup="stop();" ontouchend="stop();">Backward</button>
+          <button class="button btn btn-primary btn-sm mb-3" onmousedown="right();" ontouchstart="right();" onmouseup="stop();" ontouchend="stop();">Right</button>
         </td>
       </tr>
 
       <tr>
         <td colspan="3" align="center">
-          <button class="button" onmousedown="toggleLights();">Flashing Lights</button>
+          <button class="button btn btn-primary btn-sm mb-3" onmousedown="backward();" ontouchstart="backward();" onmouseup="stop();" ontouchend="stop();">Backward</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">
+          <div class="dropdown">
+            <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Accessory
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" onclick="policeLights()">Police Lights</a></li>
+              <li><a class="dropdown-item" onclick="#">Sequential Flashing</a></li>
+              <li><a class="dropdown-item" onclick="#">Paired Flashing</a></li>
+            </ul>
+          </div>
+        </td>
+        <td align="center">
+          <div class="dropdown">
+            <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Flash Speed
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" >Slow</a></li>
+              <li><a class="dropdown-item" >Intermediate</a></li>
+              <li><a class="dropdown-item" >Fast</a></li>
+            </ul>
+          </div>
+<!--          <div class="form-check">-->
+<!--            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">-->
+<!--            <label class="form-check-label" for="flexRadioDefault1">Slow</label>-->
+<!--          </div>-->
+<!--          <div class="form-check">-->
+<!--            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>-->
+<!--            <label class="form-check-label" for="flexRadioDefault2">Intermediate</label>-->
+<!--          </div>-->
+<!--          <div class="form-check">-->
+<!--            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>-->
+<!--            <label class="form-check-label" for="flexRadioDefault2">Fast</label>-->
+<!--          </div>-->
+        </td>
+<!--        <td>-->
+<!--          <button class="button" onclick="toggleLights();">Flashing Lights</button>-->
 <!--            <input class="form-check-input" type="checkbox" role="switch" id="ligihts" on>-->
 <!--            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>-->
-        </td>
+<!--        </td>-->
       </tr>
 
     </table>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

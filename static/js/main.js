@@ -34,6 +34,18 @@ function toggleLights(){
         .then(data => console.log(data))
 }
 
+function sequentialFlashing(){
+    console.log("Sequential Flashing Lights")
+}
+
+function policeLights(){
+    console.log("Police Lights")
+}
+
+function pairedFlashing(){
+    console.log("Paired Flashing Lights")
+}
+
 //function toggleLights(){
 //    let flashing_lights =
 //    fetch('/flashingLights')
