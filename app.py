@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from movement import Movement
 
 app = Flask(__name__)
@@ -44,11 +44,24 @@ def stop():
     return render_template('index.html')
 
 
-@app.route('/policeLights')
-def flash_police_lights():
-    print('flash_police_lights')
+@app.route('/sequentialFlashing')
+def sequential_flashing():
+    mv = Movement()
+    mv.sequential_flashing(.25)
+    return render_template('index.html')
+
+@app.route('/policeLights', methods=['POST'])
+def police_lights():
+    data = request.get_json()
+    print(f'data is: {data["value"]}')
     mv = Movement()
     mv.police_lights(.25)
+    return render_template('index.html')
+
+@app.route('/pairedFlashing')
+def paired_flashing():
+    mv = Movement()
+    mv.paired_flashing(.25)
     return render_template('index.html')
 
 # @app.route('/flashingLights')

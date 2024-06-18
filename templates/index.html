@@ -71,9 +71,9 @@
               Accessory
             </button>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" onclick="sequentialFlashing()">Sequential Flashing</a></li>
               <li><a class="dropdown-item" onclick="policeLights()">Police Lights</a></li>
-              <li><a class="dropdown-item" onclick="#">Sequential Flashing</a></li>
-              <li><a class="dropdown-item" onclick="#">Paired Flashing</a></li>
+              <li><a class="dropdown-item" onclick="pairedFlashing()">Paired Flashing</a></li>
             </ul>
           </div>
         </td>
@@ -83,9 +83,9 @@
               Flash Speed
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" >Slow</a></li>
-              <li><a class="dropdown-item" >Intermediate</a></li>
-              <li><a class="dropdown-item" >Fast</a></li>
+              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="slowFlashSpeed">Slow</input></li>
+              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="intermediateFlashSpeed" checked>Intermediate</input></li>
+              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="fastFlashSpeed">Fast</input></li>
             </ul>
           </div>
 <!--          <div class="form-check">-->
