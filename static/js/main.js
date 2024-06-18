@@ -39,6 +39,10 @@ function sequentialFlashing(){
 }
 
 function policeLights(){
+    fetch('/policeLights')
+        .then(response => response.json)
+        .then(data => console.log(data))
+
     console.log("Police Lights")
 }
 

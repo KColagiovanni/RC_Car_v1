@@ -44,9 +44,16 @@ def stop():
     return render_template('index.html')
 
 
-@app.route('/flashingLights')
-def flashingLights():
+@app.route('/policeLights')
+def flash_police_lights():
+    print('flash_police_lights')
     mv = Movement()
+    mv.police_lights(.25)
+    return render_template('index.html')
+
+# @app.route('/flashingLights')
+# def flashingLights():
+#     mv = Movement()
     # if light_count % 2 == 0:
     #     toggle = True
     #     light_count += 1
@@ -58,8 +65,8 @@ def flashingLights():
     #     light_count += 1
     # else:
     #     toggle = False
-    mv.toggle_lights()
-    return render_template('index.html')
+    # mv.toggle_lights()
+    # return render_template('index.html')
 
 
 if __name__ == '__main__':
