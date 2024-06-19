@@ -4,6 +4,7 @@
     <title>RC Car</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <style>
       body { font-family: Arial; text-align: center; margin:0px auto; padding-top: 30px;}
       table { margin-left: auto; margin-right: auto; }
@@ -64,51 +65,61 @@
         </td>
       </tr>
 
-      <tr>
-        <td align="center">
-          <div class="dropdown">
-            <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Accessory
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" onclick="sequentialFlashing()">Sequential Flashing</a></li>
-              <li><a class="dropdown-item" onclick="policeLights()">Police Lights</a></li>
-              <li><a class="dropdown-item" onclick="pairedFlashing()">Paired Flashing</a></li>
-            </ul>
-          </div>
-        </td>
-        <td align="center">
-          <div class="dropdown">
-            <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Flash Speed
-            </button>
-            <ul class="dropdown-menu">
-              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="slowFlashSpeed">Slow</input></li>
-              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="intermediateFlashSpeed" checked>Intermediate</input></li>
-              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="fastFlashSpeed">Fast</input></li>
-            </ul>
-          </div>
-<!--          <div class="form-check">-->
-<!--            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">-->
-<!--            <label class="form-check-label" for="flexRadioDefault1">Slow</label>-->
+<!--      <tr>-->
+<!--        <td align="center">-->
+<!--          <div class="dropdown">-->
+<!--            <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--              Accessory-->
+<!--            </button>-->
+<!--            <ul class="dropdown-menu">-->
+<!--              <li><a class="dropdown-item" onclick="sequentialFlashing()">Sequential Flashing</a></li>-->
+<!--              <li><a class="dropdown-item" onclick="policeLights()">Police Lights</a></li>-->
+<!--              <li><a class="dropdown-item" onclick="pairedFlashing()">Paired Flashing</a></li>-->
+<!--            </ul>-->
 <!--          </div>-->
-<!--          <div class="form-check">-->
-<!--            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>-->
-<!--            <label class="form-check-label" for="flexRadioDefault2">Intermediate</label>-->
-<!--          </div>-->
-<!--          <div class="form-check">-->
-<!--            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>-->
-<!--            <label class="form-check-label" for="flexRadioDefault2">Fast</label>-->
-<!--          </div>-->
-        </td>
-<!--        <td>-->
-<!--          <button class="button" onclick="toggleLights();">Flashing Lights</button>-->
-<!--            <input class="form-check-input" type="checkbox" role="switch" id="ligihts" on>-->
-<!--            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>-->
 <!--        </td>-->
-      </tr>
+<!--        <td align="center">-->
+<!--          <div class="dropdown">-->
+<!--            <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--              Flash Speed-->
+<!--            </button>-->
+<!--            <ul class="dropdown-menu">-->
+<!--              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="slowFlashSpeed">Slow</input></li>-->
+<!--              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="intermediateFlashSpeed" checked>Intermediate</input></li>-->
+<!--              <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="fastFlashSpeed">Fast</input></li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </td>-->
+<!--      </tr>-->
 
     </table>
+
+    <form action="/lights" method="POST">
+      <div class="dropdown">
+        <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Accessory
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" id="sequentialFlashingLights">Sequential Flashing</a></li>
+          <li><a class="dropdown-item" id="flashingPoliceLights">Police Lights</a></li>
+          <li><a class="dropdown-item" id="pairedFlashingLights">Paired Flashing</a></li>
+        </ul>
+        <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Flash Speed
+        </button>
+        <ul class="dropdown-menu">
+          <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="slowFlashSpeed">Slow</input></li>
+          <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="intermediateFlashSpeed" checked>Intermediate</input></li>
+          <li><input class="form-check-input" type="radio" name="flexRadioDefault" id="fastFlashSpeed">Fast</input></li>
+        </ul>
+      </div>
+<!--      <input type="radio" name="input1" placeholder="First Number">-->
+<!--      <input type="radio" name="input2" placeholder="Second Number">-->
+<!--      <input type="radio" name="input2" placeholder="Second Number">-->
+
+      <input class="button btn btn-primary btn-sm mb-3" type="submit" onclick="flashingLights()" value="Submit">
+    </form>
+
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
