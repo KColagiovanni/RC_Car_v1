@@ -14,6 +14,8 @@ class Movement:
         self.YELLOW_LED_PIN = 1
         self.GREEN_LED_PIN = 7
 
+        self.total_number_of_flashes = 5
+
         # GPIO.setmode(GPIO.BCM)
         # GPIO.setup(self.MOTOR_1_PIN_1, GPIO.OUT)
         # GPIO.setup(self.MOTOR_1_PIN_2, GPIO.OUT)
@@ -61,7 +63,7 @@ class Movement:
 
     def sequential_flashing(self, flash_duration):
         flash_count = 0
-        while flash_count < 25:
+        while flash_count < self.total_number_of_flashes:
 
             print('Flash Red')
             # GPIO.output(self.BLUE_LED_PIN, False)
@@ -93,7 +95,7 @@ class Movement:
 
     def police_lights(self, flash_duration):
         flash_count = 0
-        while flash_count < 25:
+        while flash_count < self.total_number_of_flashes:
             print('Flash Red')
             # GPIO.output(self.RED_LED_PIN, True)
             # GPIO.output(self.BLUE_LED_PIN, False)
@@ -110,7 +112,7 @@ class Movement:
 
     def paired_flashing(self, flash_duration):
         flash_count = 0
-        while flash_count < 25:
+        while flash_count < self.total_number_of_flashes:
 
             print('Flash Red and Green')
             # GPIO.output(self.BLUE_LED_PIN, False)

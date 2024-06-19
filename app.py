@@ -45,11 +45,12 @@ def stop():
 
 @app.route('/lights', methods=['POST', 'GET'])
 def lights():
+    print(f'request method: {request.method}')
     if request.method == 'POST':
         print('method is POST')
-        print(request.form['flexRadioDefault'])
-    data = request.get_json()
-    print(f'data is: {data["value"]}')
+        print(f'request.form is: {request.form}')
+    # data = request.get_json()
+    # print(f'data is: {data["value"]}')
     mv = Movement()
     mv.sequential_flashing(.25)
     return render_template('index.html')
