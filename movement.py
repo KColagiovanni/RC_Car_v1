@@ -135,33 +135,3 @@ class Movement:
             # GPIO.output(self.RED_LED_PIN, False)
             # GPIO.output(self.YELLOW_LED_PIN, False)
             # GPIO.output(self.GREEN_LED_PIN, False)
-
-    # def lights_off(self):
-    #     print('Lights off')
-    #     GPIO.output(self.BLUE_LED_PIN, False)
-    #     GPIO.output(self.RED_LED_PIN, False)
-
-    # def toggle_lights(self):
-    #     # print(f'lights is {self.lights}')
-    #     # if not self.lights:
-    #     self.flash_count += 1
-    #     print(f'self.flash_count is {self.flash_count}')
-    #     if self.flash_count % 2 != 0:
-    #         print('Turning lights On')
-    #         self.flashing_lights(True)
-    #     else:
-    #         print('Turning lights Off')
-    #         self.flashing_lights(False)
-    #
-    # def flashing_lights(self, lights_on):
-    #     print('Flashing Lights')
-    #     print(f'lights_on is {lights_on}')
-    #     while lights_on:
-    #         print('Flash Red')
-    #         # GPIO.output(self.RED_LED_PIN, True)
-    #         # GPIO.output(self.BLUE_LED_PIN, False)
-    #         sleep(self.flash_duration)
-    #         print('Flash Blue')
-    #         # GPIO.output(self.BLUE_LED_PIN, True)
-    #         # GPIO.output(self.RED_LED_PIN, False)
-    #         sleep(self.flash_duration)

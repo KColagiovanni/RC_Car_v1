@@ -45,14 +45,30 @@ def stop():
 
 @app.route('/lights', methods=['POST', 'GET'])
 def lights():
-    print(f'request method: {request.method}')
     if request.method == 'POST':
-        print('method is POST')
-        print(f'request.form is: {request.form}')
-    # data = request.get_json()
-    # print(f'data is: {data["value"]}')
-    mv = Movement()
-    mv.sequential_flashing(.25)
+        type = request.form['type']
+        speed = request.form['speed']
+
+        if speed == 'slow':
+            flash_speed = 0.5
+        elif speed == 'intermediate':
+            flash_speed = 0.25
+        elif speed == 'fast':
+            flash_speed = 0.1
+        else:
+            print('speed was not defined')
+            flash_speed = 0
+
+        mv = Movement()
+        if type == 'sequential':
+            mv.sequential_flashing(flash_speed)
+        elif type == 'police':
+            mv.police_lights(flash_speed)
+        elif type == 'paired':
+            mv.paired_flashing(flash_speed)
+        else:
+            print('type was not defined')
+
     return render_template('index.html')
 
 # @app.route('/sequentialFlashing', methods=['POST', 'GET'])
