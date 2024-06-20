@@ -48,6 +48,7 @@ def lights():
     if request.method == 'POST':
         type = request.form['type']
         speed = request.form['speed']
+        flash_duration = int(request.form['duration'])
 
         if speed == 'slow':
             flash_speed = 0.5
@@ -61,11 +62,11 @@ def lights():
 
         mv = Movement()
         if type == 'sequential':
-            mv.sequential_flashing(flash_speed)
+            mv.sequential_flashing(flash_speed, flash_duration)
         elif type == 'police':
-            mv.police_lights(flash_speed)
+            mv.police_lights(flash_speed,flash_duration)
         elif type == 'paired':
-            mv.paired_flashing(flash_speed)
+            mv.paired_flashing(flash_speed, flash_duration)
         else:
             print('type was not defined')
 
