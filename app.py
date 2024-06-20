@@ -43,6 +43,7 @@ def stop():
     mv.stop()
     return render_template('index.html')
 
+
 @app.route('/lights', methods=['POST', 'GET'])
 def lights():
     if request.method == 'POST':
@@ -71,45 +72,6 @@ def lights():
             print('type was not defined')
 
     return render_template('index.html')
-
-# @app.route('/sequentialFlashing', methods=['POST', 'GET'])
-# def sequential_flashing():
-#     data = request.get_json()
-#     print(f'data is: {data["value"]}')
-#     mv = Movement()
-#     mv.sequential_flashing(.25)
-#     return render_template('index.html')
-#
-# @app.route('/policeLights', methods=['POST', 'GET'])
-# def police_lights():
-#     data = request.get_json()
-#     print(f'data is: {data["value"]}')
-#     mv = Movement()
-#     mv.police_lights(.25)
-#     return render_template('index.html')
-#
-# @app.route('/pairedFlashing')
-# def paired_flashing():
-#     mv = Movement()
-#     mv.paired_flashing(.25)
-#     return render_template('index.html')
-
-# @app.route('/flashingLights')
-# def flashingLights():
-#     mv = Movement()
-    # if light_count % 2 == 0:
-    #     toggle = True
-    #     light_count += 1
-    # else:
-    #     toggle = False
-    # mv.toggle_lights(toggle)
-    # if light_count % 2 == 0:
-    #     toggle = True
-    #     light_count += 1
-    # else:
-    #     toggle = False
-    # mv.toggle_lights()
-    # return render_template('index.html')
 
 
 if __name__ == '__main__':
