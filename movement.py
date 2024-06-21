@@ -86,11 +86,7 @@ class Movement:
 
             flash_count += 1
         else:
-            print('Flash Off')
-            # GPIO.output(self.BLUE_LED_PIN, False)
-            # GPIO.output(self.RED_LED_PIN, False)
-            # GPIO.output(self.YELLOW_LED_PIN, False)
-            # GPIO.output(self.GREEN_LED_PIN, False)
+            self.lights_off()
 
     def police_lights(self, flash_speed, flash_duration):
         flash_count = 0
@@ -105,9 +101,7 @@ class Movement:
             sleep(flash_speed)
             flash_count += 1
         else:
-            print('Flash Off')
-            # GPIO.output(self.BLUE_LED_PIN, False)
-            # GPIO.output(self.RED_LED_PIN, False)
+            self.lights_off()
 
     def paired_flashing(self, flash_speed, flash_duration):
         flash_count = 0
@@ -129,8 +123,11 @@ class Movement:
 
             flash_count += 1
         else:
-            print('Flash Off')
-            # GPIO.output(self.BLUE_LED_PIN, False)
-            # GPIO.output(self.RED_LED_PIN, False)
-            # GPIO.output(self.YELLOW_LED_PIN, False)
-            # GPIO.output(self.GREEN_LED_PIN, False)
+            self.lights_off()
+
+    def lights_off(self):
+        print('Lights Off')
+        # GPIO.output(self.BLUE_LED_PIN, False)
+        # GPIO.output(self.RED_LED_PIN, False)
+        # GPIO.output(self.YELLOW_LED_PIN, False)
+        # GPIO.output(self.GREEN_LED_PIN, False)
