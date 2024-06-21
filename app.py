@@ -37,10 +37,10 @@ def right():
     return render_template('index.html')
 
 
-@app.route('/stop')
-def stop():
+@app.route('/horn')
+def horn():
     mv = Movement()
-    mv.stop()
+    mv.horn()
     return render_template('index.html')
 
 
@@ -50,6 +50,8 @@ def lights():
         type = request.form['type']
         speed = request.form['speed']
         flash_duration = int(request.form['duration'])
+
+        print(f'speed is: {speed}')
 
         if speed == 'slow':
             flash_speed = 0.5

@@ -14,6 +14,6 @@ function right(){
     fetch('/right')
 }
 
-function stop(){
-    fetch('/stop')
+function horn(){
+    fetch('/horn')
 }

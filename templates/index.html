@@ -51,7 +51,7 @@
         </td>
 
         <td align="center">
-          <button class="button btn btn-primary btn-sm mb-3" onmousedown="stop();" ontouchstart="stop();">Stop</button>
+          <button class="button btn btn-primary btn-sm mb-3" onmousedown="horn();" ontouchstart="horn();">Horn</button>
         </td>
 
         <td align="center">
@@ -67,31 +67,38 @@
     </table>
 
     <form action="/lights" method="POST">
-<!--      <div class="dropdown">-->
-<!--        <button onclick="" class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--          Accessory-->
-<!--        </button>-->
-<!--        <ul class="dropdown-menu">-->
-        <ul>
-          <li><input class="form-check-input" type="radio" name="type"  value="sequential" id="sequentialFlashingLights">Sequential Flashing</input></li>
-          <li><input class="form-check-input" type="radio" name="type"  value="police" id="flashingPoliceLights" checked>Police Lights</input></li>
-          <li><input class="form-check-input" type="radio" name="type"  value="paired" id="pairedFlashingLights">Paired Flashing</input></li>
-        </ul>
-<!--        <button class="button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--          Flash Speed-->
-<!--        </button>-->
-<!--        <ul class="dropdown-menu">-->
-        <ul>
-          <li><input class="form-check-input" type="radio" name="speed" value="slow" id="slowFlashSpeed">Slow</input></li>
-          <li><input class="form-check-input" type="radio" name="speed" value="intermediate" id="intermediateFlashSpeed" checked>Intermediate</input></li>
-          <li><input class="form-check-input" type="radio" name="speed" value="fast" id="fastFlashSpeed">Fast</input></li>
-        </ul>
-        <input type="number" min="1" max="1000" name="duration" value="5">Flash Duration</input>
-<!--      </div>-->
-<!--      <input type="radio" name="input1" placeholder="First Number">-->
-<!--      <input type="radio" name="input2" placeholder="Second Number">-->
-<!--      <input type="radio" name="input2" placeholder="Second Number">-->
-
+      <div class="col-md-4">
+        <label for="flashType" class="form-label">Flash Type</label>
+        <select id="flashType" class="form-select" name="type">
+<!--          <option selected>Choose...</option>-->
+          <option value="sequential">Sequential Flashing</option>
+          <option value="police" selected>Flasing Police Lights</option>
+          <option value="paired">Paired Flashing</option>
+        </select>
+      </div>
+<!--      <ul>-->
+<!--        <li><input class="form-check-input" type="radio" name="type"  value="sequential" id="sequentialFlashingLights">Sequential Flashing</input></li>-->
+<!--        <li><input class="form-check-input" type="radio" name="type"  value="police" id="flashingPoliceLights" checked>Police Lights</input></li>-->
+<!--        <li><input class="form-check-input" type="radio" name="type"  value="paired" id="pairedFlashingLights">Paired Flashing</input></li>-->
+<!--      </ul>-->
+      <div class="col-md-4">
+        <label for="flashSpeed" class="form-label">Flash Speed</label>
+        <select id="flashSpeed" class="form-select" name="speed">
+<!--          <option selected>Choose...</option>-->
+          <option value="slow">Slow</option>
+          <option value="intermediate" selected>Intermediate</option>
+          <option value="fast">Fast</option>
+        </select>
+      </div>
+<!--        <ul>-->
+<!--          <li><input class="form-check-input" type="radio" name="speed" value="slow" id="slowFlashSpeed">Slow</input></li>-->
+<!--          <li><input class="form-check-input" type="radio" name="speed" value="intermediate" id="intermediateFlashSpeed" checked>Intermediate</input></li>-->
+<!--          <li><input class="form-check-input" type="radio" name="speed" value="fast" id="fastFlashSpeed">Fast</input></li>-->
+<!--        </ul>-->
+        <label for="flashDuration" class="form-label">Flash Duration</label>
+        <br>
+      <input id="flashDuration" type="number" min="1" max="1000" name="duration" value="10">
+    <br>
       <input class="button btn btn-primary btn-sm mb-3" type="submit" value="Start">
     </form>
 
