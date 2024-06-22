@@ -22,6 +22,6 @@ function horn(){
     fetch('/horn')
 }
 
-function horn(){
+function hornStop(){
     fetch('/hornStop')
 }
