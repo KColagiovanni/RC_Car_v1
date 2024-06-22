@@ -56,9 +56,20 @@ class Movement:
         GPIO.output(self.MOTOR_2_PIN_1, False)
         GPIO.output(self.MOTOR_2_PIN_2, True)
 
+    def stop(self):
+        print('Stop')
+        GPIO.output(self.MOTOR_1_PIN_1, False)
+        GPIO.output(self.MOTOR_1_PIN_2, False)
+        GPIO.output(self.MOTOR_2_PIN_1, False)
+        GPIO.output(self.MOTOR_2_PIN_2, False)
+
     def horn(self):
         print('Beep!')
         GPIO.output(self.HORN_PIN, True)
+
+    def hornStop(self):
+        print('Unbeep!')
+        GPIO.output(self.HORN_PIN, False)
 
     def sequential_flashing(self, flash_speed, flash_duration):
         flash_count = 0

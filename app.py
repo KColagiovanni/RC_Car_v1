@@ -37,12 +37,23 @@ def right():
     return render_template('index.html')
 
 
+@app.route('/stop')
+def stop():
+    mv = Movement()
+    mv.stop()
+    return render_template('index.html')
+
 @app.route('/horn')
 def horn():
     mv = Movement()
     mv.horn()
     return render_template('index.html')
 
+@app.route('/hornStop')
+def hornStop():
+    mv = Movement()
+    mv.hornStop()
+    return render_template('index.html')
 
 @app.route('/lights', methods=['POST', 'GET'])
 def lights():
