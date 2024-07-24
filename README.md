@@ -3,7 +3,7 @@
 ## Description
 This project is a web app that is used to control a car remotely.
 
->[!Warning]
+>[!important]
 > Soldering is required to get this project working.
 
 ## Requirements
@@ -44,8 +44,31 @@ RPi.GPIO
 > [!Note]
 > Prices are always changing and may differ from the listed prices.
 
-## How to Install and Run
+## User Guide
+### Getting Started
+- Setup the Raspberry Pi Zero 2W:
+  - [Install Raspberry Pi OS using Raspberry Pi Imager on your personal PC](https://www.raspberrypi.com/software)
+  - Insert/connect the SD card to a personal computer.
+  - Open the Imager and select "Operating System" > "Raspberry Pi OS (other)" > "Raspberry Pi OS Lite (64-bit)".
+  - Then select "Choose Storage" and select the SD card that is installed.
+  - Finally select "Write".
+  - Once complete, insert the SD card into the Raspberry Pi.
+  - Connect the Raspberry Pi to a monitor and connect a keyboard and mouse to the Raspberry Pi.
+  - Power it on and once it is booted up, type `sudo raspi-config` to open the configuration page.
+  - Setup WiFi by selecting "1 System Options" > "Wireless LAN" > enter network SSID then password.
+  - Enable SSH by selecting "3 Interface Options" > "SSH" and select yes to enable.
+  - reboot (`sudo shutdown -r now`).
+  - If git is not installed on your PC, install it up now.
+  - On your personal PC get the setup script to set up the Raspberry Pi by cloning it. From the terminal type `git clone https://github.com/KColagiovanni/RC_Car_v1_RPi_setup_script.git` into the desired directory.
+  - From the command line navigate to the directory where the setup scrpit was cloned, and type `scp <RPi host name>@<RPi IP Address>:~ zero2w_setup.sh` to copy it to the Raspberry Pi.
 
-## How to Use
+### How to Use
+1. Clone this project to any directory and make note of the path to it.
+2. In a command prompt window, navigate to the directory where the project was cloned and go into that directory.
+3. In a command prompt type `dir`, and verify that the “main.py”, “plot_data.py”, “process_and_train_data.py”, and “diabetes.csv” files are there, if any of those files are not present, go back to step 1.
+4. If typing `python –version` in the command prompt window displays `Python 3.11.X`, continue to step 4a. If typing `python3 –version` in the command prompt window displays `Python 3.11.X`, continue to step 4b.
+    - a. In a command prompt window, type: “python main.py” and ensure the applicationGUI is displayed.
+    - b. In a command prompt window, type: “python3 main.py” and ensure the applicationGUI is displayed. 
+5. Once the application is running:
 
 ## Credits/Resources
