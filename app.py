@@ -62,8 +62,6 @@ def lights():
         speed = request.form['speed']
         flash_duration = int(request.form['duration'])
 
-        print(f'speed is: {speed}')
-
         if speed == 'slow':
             flash_speed = 0.5
         elif speed == 'intermediate':
@@ -78,7 +76,7 @@ def lights():
         if type == 'sequential':
             mv.sequential_flashing(flash_speed, flash_duration)
         elif type == 'police':
-            mv.police_lights(flash_speed,flash_duration)
+            mv.police_lights(flash_speed, flash_duration)
         elif type == 'paired':
             mv.paired_flashing(flash_speed, flash_duration)
         else:
