@@ -65,10 +65,11 @@ RPi.GPIO
 ### How to Use
 1. Clone this project to any directory and make note of the path to it.
 2. In a command prompt window, navigate to the directory where the project was cloned and go into that directory.
-3. In a command prompt type `dir`, and verify that the “main.py”, “plot_data.py”, “process_and_train_data.py”, and “diabetes.csv” files are there, if any of those files are not present, go back to step 1.
+3. In a command prompt type `dir`(windows) or `ls`(unix), and verify that the “app.py”, “movement.py”, “static” folder, and “templates” folder are all there, if any of those files/folders are not present, go back to step 1.
 4. If typing `python –version` in the command prompt window displays `Python 3.11.X`, continue to step 4a. If typing `python3 –version` in the command prompt window displays `Python 3.11.X`, continue to step 4b.
-    - a. In a command prompt window, type: “python main.py” and ensure the applicationGUI is displayed.
-    - b. In a command prompt window, type: “python3 main.py” and ensure the applicationGUI is displayed. 
+    - a. In a command prompt window, type: “python app.py” and the flask server will start.
+    - b. In a command prompt window, type: “python3 app.py” and the flask server will start.
+Note: The IP address to use to connect to the server will be displayed in the terminal. 
 5. Once the application is running:
-
+  Open a browser window and enter the IP address provided in the terminal.
 ## Credits/Resources
