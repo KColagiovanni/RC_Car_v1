@@ -64,6 +64,12 @@ Total Cost: ~$133.57 to $166.28
       - Insert/connect the SD card to a personal computer.
       - Open the Imager and select "Operating System" > "Raspberry Pi OS (other)" > "Raspberry Pi OS Lite (64-bit)".
       - Then select "Choose Storage" and select the SD card that is installed.
+      - Click the setting icon:
+        - Check "Enable SSH" and select "Use password authentication".
+        - Check "Set username and password", and enter a username and password.
+        - Check "Configure wireless LAN" and set the SSID and WiFi password. (Note: Raspberry Pi's can only connect to 2.4GHz networks, and cannot connect to 5Ghz netowrks.)
+        - Select your country from the options in "Wireless LAN country".
+        - Click "Save".
       - Finally select "Write".
       - Once the write is complete, remove the SD card from your personal PC and insert the SD card into the Raspberry Pi.
     - From Raspberry Pi
@@ -82,15 +88,15 @@ Total Cost: ~$133.57 to $166.28
       - Setup is complete.
 
 - #### Assemble the RC Car:
-  - Start by soldering the wires onto the RC Car motors. It will make things a little easier if all the motors are wired the same. SOlder the wires(one red and one black) onto one motor first, the copy onto the rest of the motors.
+  - Start by soldering the wires onto the RC Car motors. It will make things a little easier if all the motors are wired the same. Solder the wires(one red and one black) onto one motor first, the copy onto the rest of the motors.
   - Assemble the rest of the car kit by following the instructions (they're not the best instructions, but the assembly is pretty straight forward). The hardest part will probably getting all the protective paper off the chassis.
   - Mount the electronics onto the chassis.
     - Mount the motor controller should be centered on the chassis using doble sidded tape or velcro, so all of the motor wires can reach it.
     - Mount the Raspbery Pi anywhere, as long as the wires can reach from it to the motor controlller and from the power bank.
     - Mount the batteries between the top and bottom chassis plates.
     - Wire the AA batteries to the motor controller (verify correct polarity).
-    - Wire the motors to the motor controller. Connect the red wires from the two left side motors together and connect the black wires from the two left motors together, then to the motor controller. Repeat for the right side.
-    - Connect the four wires from the Raspberry Pi to the motor controller.
+    - Wire the motors to the motor controller. Connect the red wires from the two left side motors together and connect the black wires from the two left motors together, then to the motor controller. Repeat for the right side. (More details coming soon)
+    - Connect the four wires from the Raspberry Pi to the motor controller. (More details coming soon)
     - Connect the USB cable from the power back to the Raspberry Pi.
       
 ### How to Use
