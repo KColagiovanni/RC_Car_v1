@@ -67,7 +67,7 @@ Total Cost: ~$133.57 to $166.28
       - Click the setting icon:
         - Check "Enable SSH" and select "Use password authentication".
         - Check "Set username and password", and enter a username and password.
-        - Check "Configure wireless LAN" and set the SSID and WiFi password. (Note: Raspberry Pi's can only connect to 2.4GHz networks, and cannot connect to 5Ghz netowrks.)
+        - Check "Configure wireless LAN" and set the SSID and WiFi password.
         - Select your country from the options in "Wireless LAN country".
         - Click "Save".
       - Finally select "Write".
